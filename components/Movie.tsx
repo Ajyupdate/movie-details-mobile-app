@@ -1,4 +1,4 @@
-import {View, Text, Button, StyleSheet, Image} from 'react-native'
+import {View, Text, Button, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import { IMovieSearchProps } from '../screens/home'
 
 type IMovieDataProps = {
@@ -7,22 +7,25 @@ type IMovieDataProps = {
 export default function Movie({movieData}: IMovieDataProps){
     // console.log(movieData)
     return(
-        <View style={styles.movie}>
-            <View style={styles.title}>
-                <Text style={styles.centeredText}> {movieData.Title}</Text>
-            </View>
+        <TouchableOpacity>
+            <View style={styles.movie}>
+                <View style={styles.title}>
+                    <Text style={styles.centeredText}> {movieData.Title}</Text>
+                </View>
            
-           <Image
-                source={{
-                uri: `${movieData.Poster}`,
-                }}
-                style={{width: 300, height: 444}}
-            />
-            <Text style={styles.type}>Type: {movieData.Type}</Text>
-            <View style={styles.button}>
-                <Button color='rgb(118, 29, 29)' title="See Details" onPress={() => console.log('Button pressed!')} />
+            <Image
+                    source={{
+                    uri: `${movieData.Poster}`,
+                    }}
+                    style={{width: 300, height: 444}}
+                />
+                <Text style={styles.type}>Type: {movieData.Type}</Text>
+                <View style={styles.button}>
+                    <Button color='rgb(118, 29, 29)' title="See Details" onPress={() => console.log('Button pressed!')} />
+                </View>
             </View>
-        </View>
+        </TouchableOpacity>
+       
     )
 }
 

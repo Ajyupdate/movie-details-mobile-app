@@ -28,7 +28,7 @@ export default function HomeScreen({navigation}:any){
     
     return(
         <View style={styles.container}>
-            <SearchInput/>
+            <SearchInput navigation={navigation}/>
             {/* <Text>Home Screen</Text>
 
             <Button 
