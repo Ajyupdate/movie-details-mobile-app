@@ -9,12 +9,14 @@ const SearchInput = ({navigation}:any) => {
   return (
     <SafeAreaView>
       <TextInput
+
         style={styles.input}
         maxLength={25}
         onChangeText={onChangeText}
         onSubmitEditing={() => navigation.push('Search', {searchedMovie: text})}
         value={text}
         placeholder='enter movie title here'
+        placeholderTextColor="#999"
       />
       
     </SafeAreaView>
@@ -23,13 +25,14 @@ const SearchInput = ({navigation}:any) => {
 
 const styles = StyleSheet.create({
     input: {
-        color: 'white',
+        color: '#fff',
         height: 40,
         margin: 12,
         borderWidth: 1,
         padding: 10,
         borderRadius: 20,
-        marginHorizontal:30
+        marginHorizontal:30,
+        
         
     },
   });
