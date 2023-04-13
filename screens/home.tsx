@@ -3,6 +3,7 @@ import {NativeStackNavigationProp } from '@react-navigation/native-stack'
 import SearchInput from '../components/search'
 import Movie from '../components/Movie'
 import { useEffect, useState } from 'react'
+import { globalStyles } from '../styles/global'
 
 export interface IMovieSearchProps {
     Poster: string;
@@ -27,7 +28,7 @@ export default function HomeScreen({navigation}:any){
     
     
     return(
-        <View style={styles.container}>
+        <View style={globalStyles.container}>
             <SearchInput navigation={navigation}/>
             {/* <Text>Home Screen</Text>
 
@@ -52,8 +53,3 @@ export default function HomeScreen({navigation}:any){
 
     
 }
-const styles = StyleSheet.create({
-        container:{
-            backgroundColor: 'rgb(30, 41, 70);'
-        }
-})

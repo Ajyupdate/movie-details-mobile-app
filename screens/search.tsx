@@ -3,6 +3,7 @@ import { useQuery, QueryClient, QueryClientProvider } from 'react-query';
 import { useEffect, useState } from 'react'
 import Movie from '../components/Movie';
 import SearchInput from '../components/search';
+import { globalStyles } from '../styles/global';
 
 
 const queryClient = new QueryClient()
@@ -22,7 +23,7 @@ export default function SearchScreen({route, navigation}: any){
     }, []);
 
     return(
-      <View style={styles.container}>
+      <View style={globalStyles.container}>
             <SearchInput navigation={navigation}/>
             
             <FlatList
@@ -41,8 +42,3 @@ export default function SearchScreen({route, navigation}: any){
     )
 }
 
-const styles = StyleSheet.create({
-  container:{
-      backgroundColor: 'rgb(30, 41, 70);'
-  }
-})
