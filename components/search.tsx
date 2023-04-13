@@ -1,16 +1,18 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, TextInput, Text} from 'react-native';
 
-const SearchInput = () => {
-  const [text, onChangeText] = React.useState('Batman');
+const SearchInput = ({navigation}:any) => {
+  const [text, onChangeText] = React.useState('');
+  
   
 
   return (
     <SafeAreaView>
       <TextInput
         style={styles.input}
-        maxLength={12}
+        maxLength={25}
         onChangeText={onChangeText}
+        onSubmitEditing={() => navigation.push('Search', {searchedMovie: text})}
         value={text}
         placeholder='enter movie title here'
       />
