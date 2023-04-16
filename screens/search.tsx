@@ -20,7 +20,7 @@ export default function SearchScreen({route, navigation}: any){
       };
     
       fetchData();
-    }, []);
+    }, [searchedMovie]);
 
     return(
       <View style={globalStyles.container}>
@@ -31,7 +31,7 @@ export default function SearchScreen({route, navigation}: any){
             data={searchedMovieData}
             
             renderItem={({item}) => (
-                <Movie movieData = {item}/>
+                <Movie movieData = {item} navigation={navigation}/>
                 
             )}
             />

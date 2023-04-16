@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/home';
 import SearchScreen from './screens/search';
 import { useEffect, useState } from 'react'
+import Details from './screens/movieDetails';
 export default function App() {
  
   return (
@@ -35,6 +36,8 @@ export default function App() {
          />
        
         <Stack.Screen name='Search' component={SearchScreen}/>
+        <Stack.Screen name='Details' component={Details}/>
+        
        
       </Stack.Navigator>
     </NavigationContainer>
