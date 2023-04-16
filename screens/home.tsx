@@ -11,6 +11,15 @@ export interface IMovieSearchProps {
     Type:   string;
     Year:   string;
     imdbID: string;
+    Plot?: string;
+    Director?: string;
+    Writer?: string;
+    Released: string;
+    BoxOffice: string;
+    Genre: string;
+    Awards: string;
+    Actors: string
+
 }
 
 export default function HomeScreen({navigation}:any){
@@ -41,7 +50,7 @@ export default function HomeScreen({navigation}:any){
             data={movieData}
             
             renderItem={({item}) => (
-                <Movie movieData = {item}/>
+                <Movie movieData = {item}  navigation = {navigation}/>
                 
             )}
             />

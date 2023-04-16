@@ -3,11 +3,12 @@ import { IMovieSearchProps } from '../screens/home'
 
 type IMovieDataProps = {
     movieData : IMovieSearchProps
+    navigation: any
 }
-export default function Movie({movieData}: IMovieDataProps){
-    // console.log(movieData)
+export default function Movie({movieData, navigation}: IMovieDataProps){
+    
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()  => navigation.push('Details', {movieTitle: movieData.Title})}>
             <View style={styles.movie}>
                 <View style={styles.title}>
                     <Text style={styles.centeredText}> {movieData.Title}</Text>

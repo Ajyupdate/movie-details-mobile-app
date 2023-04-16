@@ -11,7 +11,7 @@ const SearchInput = ({navigation}:any) => {
       <TextInput
 
         style={styles.input}
-        maxLength={25}
+        maxLength={50}
         onChangeText={onChangeText}
         onSubmitEditing={() => navigation.push('Search', {searchedMovie: text})}
         value={text}
