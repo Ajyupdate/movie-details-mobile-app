@@ -5,7 +5,7 @@ import SearchInput from "../components/search";
 import { globalStyles } from "../styles/global";
 
 
-export default function Details({route}:any){
+export default function Details({route,navigation}:any){
    const {movieTitle} = route.params
    const [clickedMovie, setClickedMovie] = useState<IMovieSearchProps>()
 
@@ -25,7 +25,7 @@ export default function Details({route}:any){
     return(
         <ScrollView>
         <View style={styles.detailContent}>
-            <SearchInput/>
+            <SearchInput navigation={navigation}/>
             <Image
                 source={{
                     uri: `${clickedMovie?.Poster}`
