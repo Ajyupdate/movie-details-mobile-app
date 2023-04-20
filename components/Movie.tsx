@@ -8,7 +8,7 @@ type IMovieDataProps = {
 export default function Movie({movieData, navigation}: IMovieDataProps){
     
     return(
-        <TouchableOpacity onPress={()  => navigation.push('Details', {movieTitle: movieData.Title})}>
+        <TouchableOpacity onPress={()  => navigation.push('Details', {movieTitle: movieData.Title}, )}>
             <View style={styles.movie}>
                 <View style={styles.title}>
                     <Text style={styles.centeredText}> {movieData.Title}</Text>
@@ -73,3 +73,7 @@ const styles = StyleSheet.create({
         color: 'rgb(118, 29, 29)',
     }
 })
+
+
+
+
