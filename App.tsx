@@ -1,11 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/home';
 import SearchScreen from './screens/search';
 import { useEffect, useState } from 'react'
 import Details from './screens/movieDetails';
+// function LogoTitle() {
+//   return (
+//     <Image
+//       style={{ width: 50, height: 50 }}
+//       source={require('@expo/snack-static/react-native-logo.png')}
+//     />
+//   );
+// }
 export default function App() {
  
   return (
@@ -32,11 +40,15 @@ export default function App() {
          options={{title:"Movie Database",
           
         }}
-         
+    
          />
        
-        <Stack.Screen name='Search' component={SearchScreen}/>
-        <Stack.Screen name='Details' component={Details}/>
+        <Stack.Screen name='Search' component={SearchScreen}
+        
+        />
+        <Stack.Screen name='Details' component={Details}
+        // options={{ headerTitle: (props) => <HeaderTitle {...props} /> }}
+        />
         
        
       </Stack.Navigator>

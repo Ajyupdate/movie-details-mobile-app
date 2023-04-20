@@ -1,26 +1,32 @@
-import { View, Text, Image, StyleSheet, ScrollView} from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView, Button} from "react-native";
 import { useEffect, useState } from 'react'
 import { IMovieSearchProps } from "./home";
 import SearchInput from "../components/search";
-import { globalStyles } from "../styles/global";
+import { useNavigation } from "@react-navigation/native";
 
 
-export default function Details({route,navigation}:any){
+
+export default function Details({route}:any){
+    const navigation = useNavigation()
+
    const {movieTitle} = route.params
    const [clickedMovie, setClickedMovie] = useState<IMovieSearchProps>()
 
     useEffect(() => {
+        
         const fetchData = async () => {
           const response = await fetch(`https://www.omdbapi.com/?t=${movieTitle}&apikey=4a3b711b`);
           const json = await response.json();
           setClickedMovie(json)
-          
+          if (clickedMovie) {
+            navigation.setOptions({ title: clickedMovie.Title });
+        }
           
         };
       
         fetchData();
 
-      }, [movieTitle]);
+      }, [clickedMovie]);
       
     return(
         <ScrollView>
@@ -72,6 +78,10 @@ export default function Details({route,navigation}:any){
                 <Text style={styles.header}>Actors</Text>
                 <Text style={styles.detailsText}>{clickedMovie?.Actors === 'N/A' ? 'Actors not availale': clickedMovie?.Actors}</Text>
             </View>
+            <Button
+                title="Update the title"
+                onPress={() => navigation.setOptions({ title: 'Updated!' })}
+                />
             
         </View>
         </ScrollView>
