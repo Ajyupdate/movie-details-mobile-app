@@ -25,22 +25,25 @@ export default function App() {
           
           headerStyle:{
             backgroundColor: 'rgb(118, 29, 29)',
+            
           },
+          
           headerTitleAlign: 'center',
           headerTintColor: '#fff',
           headerTitleStyle: {
-            fontWeight: 'bold' 
+            fontWeight: 'bold',
+            
+            
+          
           },
+          
           
         }}
       >
         <Stack.Screen name='Home'
          component={HomeScreen}
-        
-         options={{title:"Movie Database",
-          
+         options={{title:"Batman",
         }}
-    
          />
        
         <Stack.Screen name='Search' component={SearchScreen}

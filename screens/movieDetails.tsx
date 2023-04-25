@@ -78,10 +78,6 @@ export default function Details({route}:any){
                 <Text style={styles.header}>Actors</Text>
                 <Text style={styles.detailsText}>{clickedMovie?.Actors === 'N/A' ? 'Actors not availale': clickedMovie?.Actors}</Text>
             </View>
-            <Button
-                title="Update the title"
-                onPress={() => navigation.setOptions({ title: 'Updated!' })}
-                />
             
         </View>
         </ScrollView>
