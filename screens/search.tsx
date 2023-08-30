@@ -14,12 +14,14 @@ export default function SearchScreen({route, navigation}: any){
     .join(' ');
     const [searchedMovieData, setSearchedMovieData] = useState()
     const [title, setTitle] = useState('')
+    const [isLoading, setIsLoading] = useState(true) 
     useEffect(() => {
       const fetchData = async () => {
         const response = await fetch(`https://www.omdbapi.com/?s=${searchedMovie}&apikey=4a3b711b`);
         const json = await response.json();
         setSearchedMovieData(json.Search)
         setTitle(json.Search.Title)
+        setIsLoading(false)
         if(searchedMovie){
           navigation.setOptions({ title: `${capitalizedTitle}` })
         }

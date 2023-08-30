@@ -1,9 +1,11 @@
 import {View, Text, Button, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import { IMovieSearchProps } from '../screens/home'
+import { useNavigation } from '@react-navigation/native'
 
 type IMovieDataProps = {
     movieData : IMovieSearchProps
     navigation: any
+    
 }
 export default function Movie({movieData, navigation}: IMovieDataProps){
     
@@ -22,7 +24,7 @@ export default function Movie({movieData, navigation}: IMovieDataProps){
                 />
                 <Text style={styles.type}>Type: {movieData.Type}</Text>
                 <View style={styles.button}>
-                    <Button color='rgb(118, 29, 29)' title="See Details" onPress={() => console.log('Button pressed!')} />
+                    <Button color='rgb(118, 29, 29)' title="See Details" onPress={() => navigation.push('Details', {movieTitle: movieData.Title}, )} />
                 </View>
             </View>
         </TouchableOpacity>

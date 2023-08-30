@@ -65,3 +65,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+// https://expo.dev/@ajy14/movieDetails3?serviceType=classic&distribution=expo-go
